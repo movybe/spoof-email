@@ -1,11 +1,10 @@
 <?php
 error_reporting(E_ALL); ini_set('display_errors', 1);
 date_default_timezone_set("Africa/Lagos");
-
 if ($_SERVER['REQUEST_METHOD'] != "POST") return;
 
 
-require "../phpmailer/PHPMailerAutoLoad.php";
+require "../phpmailer/class.phpmailer.php";
 $send_to = $_POST['send_to'];
 $to  = $_POST["userEmail"];
 $from_email = $_POST["userFakeEmail"];
@@ -23,12 +22,12 @@ $mail->SMTPDebug = 1;
 $mail->SMTPAuth = TRUE;
 $mail->SMTPSecure = "ssl";
 $mail->Port     = 465;  
-$mail->Username = "tinkshak";
-$mail->Password = "acurazdx";
-$mail->Host     = "smtp.gmail.com";
+$mail->Username = "kosi";
+$mail->Password = "pray4grace";
+$mail->Host     = "mail.movybe.com";
 $mail->Mailer   = "smtp";
 $mail->SetFrom($from_email, $from_name);
-$mail->AddReplyTo($reply_to === "" ? $from_email : $replyTo , $from_name);
+$mail->AddReplyTo($reply_to === "" ? $from_email : $reply_to , $from_name);
 $mail->AddAddress($to , $to_name);	
 $mail->Subject = $subject;
 $mail->WordWrap   = 80;
