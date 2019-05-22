@@ -1,3 +1,4 @@
+<?php echo getcwd();?>
 <style>
 body {
 	width: 610px;
