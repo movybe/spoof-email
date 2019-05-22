@@ -1,4 +1,4 @@
-<?php echo getcwd();?>
+<?php echo $_SERVER["DOCUMENT_ROOT"];?>
 <style>
 body {
 	width: 610px;
