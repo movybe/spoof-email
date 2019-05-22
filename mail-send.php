@@ -44,9 +44,9 @@ if(!$mail->Send()) {
 }
 
 else {
-   ini_set("SMTP","smtp.gmail.com");
-   ini_set("smtp_port" , 25);
-   ini_set("sendmail_from" , "<tinkshak>@gmail.com");
+   //ini_set("SMTP","smtp.gmail.com");
+   //ini_set("smtp_port" , 25);
+   //ini_set("sendmail_from" , "<tinkshak>@gmail.com");
    // get the sender's name and email address
    // we'll just plug them a variable to be used later
    $from = stripslashes($from_name)."<".stripslashes($from_email).">";
