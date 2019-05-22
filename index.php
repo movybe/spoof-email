@@ -81,7 +81,7 @@ $("#frmEnquiry").on('submit',(function(e){
 	valid = validateContact();
 	if(valid) {
 		$.ajax({
-		url: "mail-send.php",
+		url: "/processors/mail-send.php",
 		type: "POST",
 		data:  new FormData(this),
 		contentType: false,
