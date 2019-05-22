@@ -1,8 +1,16 @@
 <?php
 
+function is_production_mode () : bool
+    {
+        $server_name = $_SERVER['SERVER_NAME'];
+        return $is_production_mode = $server_name !== 'localhost';
+    }
 
-require(__DIR__.'/phpmailer/PHPMailerAutoLoad.php');
+
+
+
 if ($_SERVER['REQUEST_METHOD'] != "POST") return;
+require(is_production_mode() ? $_SERVER["DOCUMENT_ROOT"]."/email/phpmailer/PHPMailerAutoLoad.php" : __DIR__.'/phpmailer/PHPMailerAutoLoad.php');
 $send_to = $_POST['send_to'];
 $to  = $_POST["userEmail"];
 $from_email = $_POST["userFakeEmail"];
