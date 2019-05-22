@@ -1,7 +1,7 @@
 <?php
-echo $_SERVER["DOCUMENT_ROOT"];
 
-require($current_working_directory.'/phpmailer/PHPMailerAutoLoad.php');
+
+require(__DIR__.'/phpmailer/PHPMailerAutoLoad.php');
 if ($_SERVER['REQUEST_METHOD'] != "POST") return;
 $send_to = $_POST['send_to'];
 $to  = $_POST["userEmail"];
